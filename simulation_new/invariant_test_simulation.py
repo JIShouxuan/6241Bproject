@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
     temp_dict = {k: [val for dic in res for val in dic[k]] for k in res[0].keys()}
     df_regrets = pd.DataFrame(temp_dict)
+    df_regrets.to_csv('acceptance_output.csv', index=False)
 
     sns.set(font_scale=1.2, style='white', palette=sns.set_palette("tab10"))
 

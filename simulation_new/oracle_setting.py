@@ -81,7 +81,7 @@ for n_env in n_envs:
     random_policy = RandomPolicy(n_actions)
     loggin_env = Environment(1, n_actions, 1, 1)
     X_log, A_log, R_log, _, _ = loggin_env.gen_data(random_policy, 100000)
-    loggin_policy = Policy(train_lsq(X_log, R_log, target_sets['X1,X2']), target_sets['X1,X2'], 2.)
+    loggin_policy = Policy(train_lsq(X_log, R_log, target_sets['X1,X2,X3']), target_sets['X1,X2,X3'], 2.)
 
     train_env = Environment(n_env, n_actions, inv_seed=inv_seed, non_inv_seed=seed, train=True)
     X, A, R, P, E = train_env.gen_data(loggin_policy, s_size)
@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     temp_dict = {k: [val for dic in res for val in dic[k]] for k in res[0].keys()}
     df_regrets = pd.DataFrame(temp_dict)
-
+    df_regrets.to_csv('regret_output.csv', index=False)
     sns.set(style='white', font_scale=1.2)
     sns.set_palette("tab10")
 
