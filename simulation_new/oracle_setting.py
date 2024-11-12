@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from multiprocessing import Pool, cpu_count
 
-n_actions = 3
+n_actions = 4
 n_iters = 400
 s_size = 10000
 n_sampling = 1000
@@ -29,8 +29,6 @@ seed = 0
 known_set = True
 #Columns: X3 <-> 0, X1 <-> 1, X2 <-> 2
 target_sets = {'X2': [2],
-               'X3': [0],
-               'X1,X2': [1, 2],
                'X2,X3': [2, 0],
                'X1,X2,X3': [1, 2, 0]}
 np.random.seed(seed)

@@ -15,7 +15,7 @@ from policy import RandomPolicy, Policy
 
 from invariant_test import invariance_test_actions_resample, fit_m, rate_fn
 
-n_actions = 3
+n_actions = 4
 inv_seed = 111
 seed = 0
 #Columns: X3 <-> 0, X1 <-> 1, X2 <-> 2
@@ -29,8 +29,8 @@ target_sets = {r'$\emptyset$': [],
 
 np.random.seed(seed)
 
-n_envs = [2, 4, 6, 8]
-s_sizes = [1000, 3000, 9000, 27000, 81000, 243000]
+n_envs = [2, 4, 6, 8, 10]
+s_sizes = [1000, 3000, 9000, 27000, 81000]
 
 random_policy = RandomPolicy(n_actions)
 loggin_env = Environment(1, n_actions, 1, 1)
